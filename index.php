@@ -26,10 +26,10 @@
 						<textarea class="form-control" id="first" rows="8" placeholder="Input"></textarea>
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" id="first" rows="8" placeholder="Output" readonly></textarea>
+						<textarea class="form-control" id="output" rows="8" placeholder="Output" readonly></textarea>
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-dark">Primary</button>
+						<button id="submit-btn" type="button" class="btn btn-dark">Primary</button>
 					</div>
 				</form>	
 			</div>
