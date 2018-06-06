@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Light IT Test</title>
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
@@ -21,6 +22,7 @@
 	    </header>
 	    <main>
 			<div class="container">
+				<div class="errors"></div>
 				<form>
 					<div class="form-group">
 						<textarea class="form-control" id="first" rows="8" placeholder="Input"></textarea>

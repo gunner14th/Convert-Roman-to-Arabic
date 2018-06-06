@@ -1,32 +1,38 @@
 <?php
 
-function is_romanic($val = '')
+function is_romanic($roman = '')
 {
-	if (!$val) {
+	if (!$roman) {
 		return;
 	}
 
-	$symbols = array(
-		'M',
-		'D',
-		'C',
-		'L',
-		'X',
-		'V',
-		'I'
+	$table = array(
+		'M'  =>1000,
+		'CM' =>900,
+		'D'  =>500,
+		'CD' =>400,
+		'C'  =>100,
+		'XC' =>90,
+		'L'  =>50,
+		'XL' =>40,
+		'X'  =>10,
+		'IX' =>9,
+		'V'  =>5,
+		'IV' =>4,
+		'I'  =>1
 	);
 
-	$counter = 0;
-	foreach ($symbols as $symbol) {
-		$sub_count = substr_count($val, $symbol);
-		if ($sub_count !== 0) {
-			$counter += $sub_count;
+	$result = 0;
+	foreach ($table as $key => $value) {
+		while (strpos($roman, $key) === 0) {
+			$result += $value;
+			$roman = substr($roman, strlen($key));
 		}
 	}
 
-	if ($counter === strlen($val)) {
-		return true;
-	} else {
+	if ($roman !== '') {
 		return false;
 	}
+
+	return true;
 }

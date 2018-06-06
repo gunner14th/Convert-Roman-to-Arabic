@@ -7,11 +7,13 @@ if (isset($_POST['action']))
 	$val = (isset($_POST['input'])) ? $_POST['input'] : '';
 	$val = trim($val);
 
+	$result = '';
+
 	if (is_romanic($val)) {
 		$result = romanic_number($val);
-	} else {
+	} elseif(is_numeric($val)) {
 		$result = number_romanic($val);
-	}
+	} 
 
 	echo json_encode($result);
 }
