@@ -17,6 +17,9 @@
 		    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	      		<div class="container">
 		        	<span class="navbar-brand">LightIT Test</span>
+		        	<div class="author text-light text-right">
+						Alexey Gorban
+					</div>
 	    		</div>
 			</nav>
 	    </header>
@@ -27,11 +30,11 @@
 					<div class="form-group">
 						<textarea class="form-control" id="first" rows="8" placeholder="Input"></textarea>
 					</div>
-					<div class="form-group">
-						<textarea class="form-control" id="output" rows="8" placeholder="Output" readonly></textarea>
+					<div class="form-group text-center">
+						<button id="submit-btn" type="button" class="btn btn-dark btn-block">Convert</button>
 					</div>
 					<div class="form-group">
-						<button id="submit-btn" type="button" class="btn btn-dark">Primary</button>
+						<textarea class="form-control" id="output" rows="8" placeholder="Output" readonly></textarea>
 					</div>
 				</form>	
 			</div>

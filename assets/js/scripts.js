@@ -7,6 +7,10 @@
 
 			var input = $('#first').val();
 
+			if (input === '') {
+				return;
+			}
+
 			$('.errors').html('');
 
 			$.ajax({
