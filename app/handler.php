@@ -9,6 +9,7 @@ if (isset($_POST['action']))
 
 	$result = '';
 
+	// determine the type of number (watch helper.php)	
 	if (is_romanic($val)) {
 		$result = romanic_number($val);
 	} elseif(is_numeric($val)) {
@@ -18,21 +19,22 @@ if (isset($_POST['action']))
 	echo json_encode($result);
 }
 
-function romanic_number($roman) { // V = 5
+// function for the Roman number
+function romanic_number($roman) { 
 	$table = array(
-		'M'  =>1000,
-		'CM' =>900,
-		'D'  =>500,
-		'CD' =>400,
-		'C'  =>100,
-		'XC' =>90,
-		'L'  =>50,
-		'XL' =>40,
-		'X'  =>10,
-		'IX' =>9,
-		'V'  =>5,
-		'IV' =>4,
-		'I'  =>1
+		'M'  => 1000,
+		'CM' => 900,
+		'D'  => 500,
+		'CD' => 400,
+		'C'  => 100,
+		'XC' => 90,
+		'L'  => 50,
+		'XL' => 40,
+		'X'  => 10,
+		'IX' => 9,
+		'V'  => 5,
+		'IV' => 4,
+		'I'  => 1
 	);
 
 	$result = 0;
@@ -45,32 +47,33 @@ function romanic_number($roman) { // V = 5
 	return $result;
 }
 
-function number_romanic($integer) { // 5 = V
+// function for the Arabic number
+function number_romanic($integer) { 
 	$table = array(
-		'M'  =>1000,
-		'CM' =>900,
-		'D'  =>500,
-		'CD' =>400,
-		'C'  =>100,
-		'XC' =>90,
-		'L'  =>50,
-		'XL' =>40,
-		'X'  =>10,
-		'IX' =>9,
-		'V'  =>5,
-		'IV' =>4,
-		'I'  =>1
+		'M'  => 1000,
+		'CM' => 900,
+		'D'  => 500,
+		'CD' => 400,
+		'C'  => 100,
+		'XC' => 90,
+		'L'  => 50,
+		'XL' => 40,
+		'X'  => 10,
+		'IX' => 9,
+		'V'  => 5,
+		'IV' => 4,
+		'I'  => 1
 	);
 
-	$return = ''; 
+	$result = ''; 
 	while($integer > 0) { 
-		foreach($table as $rom=>$arb) { 
+		foreach($table as $rom => $arb) { 
             if($integer >= $arb) { 
                 $integer -= $arb;
-                $return .= $rom;
+                $result .= $rom;
                 break;
             }
         }
 	}
-	return $return; 
+	return $result; 
 }

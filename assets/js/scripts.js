@@ -3,7 +3,7 @@
 
 		var button = $('#submit-btn');
 
-		button.on('click', function() {
+		button.on('click', function() {	// listen button event
 
 			var input = $('#first').val();
 
@@ -11,7 +11,7 @@
 				return;
 			}
 
-			$('.errors').html('');
+			$('.errors').html('');	// remove the error message
 
 			$.ajax({
 				method: "POST",
@@ -25,9 +25,9 @@
 			.done(function(result) {
 				if (!result) {
 					$('.errors')
-						.html('<div class="alert alert-danger" role="alert">Check number format, please</div>');
+						.html('<div class="alert alert-danger" role="alert">Check number format, please</div>'); // error message
 				}
-				$('#output').val(result);
+				$('#output').val(result); // show result
 			})
 			.fail(function(jqXHR, textStatus) {
 				console.log( "Request failed: " + textStatus );
